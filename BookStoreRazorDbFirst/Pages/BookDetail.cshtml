@@ -1,0 +1,52 @@
+﻿@page "{id:int}"
+@model BookStoreRazorDbFirst.Pages.BookDetailModel
+@{
+    Layout = "_UserLayout";
+}
+
+<div class="row align-items-center mt-5">
+
+    <div class="col-md-5">
+        <div class="panel-card">
+            <img src="@Model.Book.ImageUrl"
+                 class="img-fluid rounded-4"
+                 style="height:480px; width:100%; object-fit:cover;"
+                 onerror="this.src='https://via.placeholder.com/500x480?text=BookVerse'" />
+        </div>
+    </div>
+
+    <div class="col-md-7">
+        <div class="panel-card">
+
+            <span class="category-pill">@Model.Book.Category</span>
+
+            <h1 class="fw-bold mt-3">@Model.Book.BookName</h1>
+
+            <p class="text-muted fs-5 mt-3">
+                @Model.Book.Author
+            </p>
+
+            <hr />
+
+            <p>
+                <strong>Kitap ID:</strong> #@Model.Book.Id
+            </p>
+
+            <p>
+                <strong>Stok Durumu:</strong> @Model.Book.Stock adet
+            </p>
+
+            <p>
+                <strong>Eklenme Tarihi:</strong> @Model.Book.CreatedDate.ToShortDateString()
+            </p>
+
+            <h2 class="price-text mt-4">@Model.Book.Price ₺</h2>
+
+            <div class="mt-4">
+                <a href="/" class="btn btn-secondary">Geri Dön</a>
+            </div>
+
+        </div>
+    </div>
+
+</div>

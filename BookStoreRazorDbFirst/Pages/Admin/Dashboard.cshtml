@@ -1,0 +1,38 @@
+﻿@page
+@model BookStoreRazorDbFirst.Pages.Admin.DashboardModel
+
+<h2 class="page-title">Dashboard</h2>
+<p class="page-subtitle">BookVerse sistem özet ekranı</p>
+
+<div class="row g-4">
+
+    <div class="col-md-4">
+        <div class="stat-card stat-purple">
+            <h5>Toplam Kitap</h5>
+            <h1>@Model.TotalBook</h1>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="stat-card stat-green">
+            <h5>Toplam Stok</h5>
+            <h1>@Model.TotalStock</h1>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="stat-card stat-dark">
+            <h5>Toplam Değer</h5>
+            <h1>@Model.TotalValue ₺</h1>
+        </div>
+    </div>
+
+</div>
+
+<div class="panel-card mt-5">
+    <h4 class="fw-bold mb-3">Hızlı İşlemler</h4>
+
+    <a href="/Admin/Books" class="btn btn-primary">Kitap Yönetimi</a>
+    <a href="/Admin/Books/Create" class="btn btn-success">Yeni Kitap Ekle</a>
+    <a href="/Admin/Reports" class="btn btn-dark">Raporlar</a>
+</div>

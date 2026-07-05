@@ -1,0 +1,49 @@
+﻿
+@page "{id:int}"
+@model BookStoreRazorDbFirst.Pages.Admin.Books.EditModel
+
+<div class="container mt-5">
+    <div class="form-modern">
+    <h2>Kitap Güncelle</h2>
+
+    <form method="post">
+
+        <input type="hidden" asp-for="Book.Id" />
+
+        <div class="mb-3">
+            <label>Kitap Adı</label>
+            <input asp-for="Book.BookName" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label>Yazar</label>
+            <input asp-for="Book.Author" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label>Kategori</label>
+            <input asp-for="Book.Category" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label>Fiyat</label>
+            <input asp-for="Book.Price" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label>Stok</label>
+            <input asp-for="Book.Stock" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label>Resim Yolu</label>
+            <input asp-for="Book.ImageUrl" class="form-control" />
+        </div>
+
+        <button class="btn btn-warning">Güncelle</button>
+        <a href="/Admin/Books" class="btn btn-secondary">Geri</a>
+
+    </form>
+
+</div>
+</div>

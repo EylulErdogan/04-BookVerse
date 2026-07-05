@@ -1,0 +1,51 @@
+﻿@page
+@model BookStoreRazorDbFirst.Pages.Admin.Books.CreateModel
+
+<div class="container mt-5">
+    <div class="form-modern">
+    <h2>Yeni Kitap</h2>
+
+    <form method="post">
+
+        <div class="mb-3">
+            <label>Kitap Adı</label>
+            <input asp-for="Book.BookName" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label>Yazar</label>
+            <input asp-for="Book.Author" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label>Kategori</label>
+            <input asp-for="Book.Category" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label>Fiyat</label>
+            <input asp-for="Book.Price" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label>Stok</label>
+            <input asp-for="Book.Stock" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label>Resim</label>
+            <input asp-for="Book.ImageUrl" class="form-control" />
+        </div>
+
+        <button class="btn btn-success">
+            Kaydet
+        </button>
+
+        <a href="/Admin/Books" class="btn btn-secondary">
+            Geri
+        </a>
+
+    </form>
+
+</div>
+</div>

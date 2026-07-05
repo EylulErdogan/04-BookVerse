@@ -1,0 +1,63 @@
+﻿@page
+@model BookStoreRazorDbFirst.Pages.IndexModel
+@{
+    Layout = "_UserLayout";
+}
+<div class="container">
+
+    <section class="hero-section">
+        <div class="row align-items-center">
+            <div class="col-md-8">
+                <h1 class="hero-title">Kitap dünyasına modern bir bakış</h1>
+                <p class="hero-text mt-3">
+                    Razor Pages ve ADO.NET ile geliştirilmiş şık, hızlı ve sade kitap yönetim sistemi.
+                </p>
+            </div>
+            <div class="col-md-4 text-md-end mt-4 mt-md-0">
+                <a href="/Admin/Books" class="btn btn-warning btn-lg">Admin Paneli</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="search-box my-5">
+        <form method="get">
+            <div class="input-group">
+                <input name="search"
+                       value="@Model.Search"
+                       class="form-control"
+                       placeholder="Kitap, yazar veya kategori ara..." />
+                <button class="btn btn-dark px-4">Ara</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="row">
+        @foreach (var item in Model.Books)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card book-card h-100">
+
+                    <img src="@item.ImageUrl"
+                         class="book-img"
+                         onerror="this.src='https://via.placeholder.com/400x270?text=BookVerse'" />
+
+                    <div class="card-body p-4">
+                        <span class="category-badge">@item.Category</span>
+
+                        <h4 class="mt-3 fw-bold">@item.BookName</h4>
+
+                        <p class="text-muted mb-1">Yazar: @item.Author</p>
+                        <p class="text-muted">Stok: @item.Stock adet</p>
+
+                        <div class="d-flex justify-content-between align-items-center mt-4">
+                            <span class="price-badge">@item.Price ₺</span>
+                            <a href="/BookDetail/@item.Id" class="btn btn-outline-dark btn-sm">Detay</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        }
+    </div>
+
+</div>

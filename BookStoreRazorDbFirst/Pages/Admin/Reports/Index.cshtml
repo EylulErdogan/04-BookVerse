@@ -1,0 +1,41 @@
+﻿@page
+@model BookStoreRazorDbFirst.Pages.Admin.Reports.IndexModel
+
+<div class="container mt-5">
+
+    <h2 class="admin-title mb-4">Rapor Paneli</h2>
+
+    <div class="row mb-4">
+
+        <div class="col-md-4">
+            <div class="stat-card stat-purple">
+                <h5>Toplam Kitap</h5>
+                <h1>@Model.TotalBookCount</h1>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="stat-card stat-green">
+                <h5>Toplam Stok</h5>
+                <h1>@Model.TotalStock</h1>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="stat-card stat-dark">
+                <h5>Toplam Değer</h5>
+                <h1>@Model.TotalValue ₺</h1>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="admin-card">
+        <h4 class="fw-bold mb-3">Çıktı İşlemleri</h4>
+
+        <a href="/Admin/Reports?handler=Excel" class="btn btn-success">Excel İndir</a>
+        <a href="/Admin/Reports?handler=Pdf" class="btn btn-danger">PDF İndir</a>
+        <a href="/Admin/Books" class="btn btn-secondary">Kitap Yönetimi</a>
+    </div>
+
+</div>

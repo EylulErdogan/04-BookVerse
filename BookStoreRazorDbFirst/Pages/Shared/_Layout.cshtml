@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookVerse Admin</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+
+    <div class="app-wrapper">
+
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <span>📚</span>
+                <h4>BookVerse</h4>
+            </div>
+
+            <a href="/" class="side-link">🏠 Kullanıcı Sayfası</a>
+            <a href="/Admin/Dashboard" class="side-link">📊 Dashboard</a>
+            <a href="/Admin/Books" class="side-link">📚 Kitap Yönetimi</a>
+            <a href="/Admin/Reports" class="side-link">📄 Raporlar</a>
+            <a href="/Logout" class="side-link logout">🚪 Çıkış</a>
+        </aside>
+
+        <section class="main-area">
+            <header class="topbar">
+                <div>
+                    <h5>Razor Pages + ADO.NET</h5>
+                    <small>Modern kitap yönetim sistemi</small>
+                </div>
+
+                <div class="admin-badge">
+                    Admin Panel
+                </div>
+            </header>
+
+            <main class="content-area">
+                @RenderBody()
+            </main>
+        </section>
+
+    </div>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

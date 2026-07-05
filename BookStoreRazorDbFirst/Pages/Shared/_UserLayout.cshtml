@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookVerse</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body class="user-body">
+
+    <nav class="user-navbar">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a href="/" class="user-logo">📚 BookVerse</a>
+
+            <div>
+                <a href="/" class="user-nav-link">Kitaplar</a>
+                <a href="/Login" class="user-login-btn">Admin Giriş</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container user-content">
+        @RenderBody()
+    </main>
+
+    <footer class="user-footer">
+        BookVerse © 2026
+    </footer>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
